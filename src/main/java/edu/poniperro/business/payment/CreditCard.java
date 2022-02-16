@@ -33,4 +33,16 @@ public class CreditCard {
     public double credit() {
         return this.credit;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        String[] phrase = {
+                "owner: ", cardOwner(), "\nnumber: ", number(), "\ncredit: ", Double.toString(credit()), SYMBOL
+        };
+        for (String word : phrase) {
+            stringBuilder.append(word);
+        }
+        return stringBuilder.toString();
+    }
 }

@@ -1,6 +1,5 @@
 package edu.poniperro.business.services;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -28,9 +27,7 @@ public class UfosParkTest {
 		assertNull(ufosPark.getUfoOf(creditCard.number()));
 		ufosPark.dispatch(creditCard);
 		String ufoOf = ufosPark.getUfoOf(creditCard.number());
-		assertTrue("unx" == ufoOf
-				|| "dox" == ufoOf
-				|| "trex" == ufoOf);
+		assertTrue("unx" == ufoOf || "dox" == ufoOf);
 
 	}
 
@@ -48,6 +45,5 @@ public class UfosParkTest {
 		ufosPark.dispatch(creditCard);
 		assertNull(ufosPark.getUfoOf(creditCard.number()));
 	}
-		
-	}
+
 }

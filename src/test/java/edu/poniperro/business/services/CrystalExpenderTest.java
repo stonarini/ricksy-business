@@ -35,4 +35,11 @@ public class CrystalExpenderTest {
 		assertEquals(0, crystalExpender.stock());
 	}
 
+	@Test
+	public void emptyCreditCardTest() {
+		this.creditCard.pay(3000);
+		crystalExpender.dispatch(creditCard);
+		assertEquals(2, crystalExpender.stock());
+	}
+
 }

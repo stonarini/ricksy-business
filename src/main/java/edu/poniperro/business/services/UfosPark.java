@@ -20,10 +20,10 @@ public class UfosPark implements GuestDispatcher {
 
 	@Override
 	public void dispatch(CreditCard creditCard) {
-		if (!flota.containsValue(creditCard.number()) && creditCard.pay(fee)) {
-			Optional<String> ufo = getFreeUfo();
+		Optional<String> ufo = getFreeUfo();
 
-			if (ufo.isPresent()) {
+		if (!flota.containsValue(creditCard.number()) && ufo.isPresent()) {
+			if (creditCard.pay(fee)) {
 				flota.put(ufo.get(), creditCard.number());
 			}
 		}
@@ -47,5 +47,10 @@ public class UfosPark implements GuestDispatcher {
 		} else {
 			return null;
 		}
+	}
+
+	@Override
+	public String toString() {
+		return flota.keySet().toString();
 	}
 }

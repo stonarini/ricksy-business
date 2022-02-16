@@ -21,4 +21,13 @@ public class CrystalExpender implements GuestDispatcher {
 		return this.stock;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		String[] phrase = { "stock: ", Integer.toString(stock()), "\ncost: ", Double.toString(itemCost) };
+		for (String word : phrase) {
+			stringBuilder.append(word);
+		}
+		return stringBuilder.toString();
+	}
 }
